@@ -1,4 +1,4 @@
-name: mdm
+name: cmdm
 channels:
   - pytorch
   - conda-forge
@@ -115,4 +115,4 @@ dependencies:
     - urllib3==1.26.12
     - wasabi==0.10.1
     - wcwidth==0.2.5
-prefix: C:/Users/alima/miniconda3/envs/mdm
+prefix: C:/Users/ali/miniconda3/envs/cmdm

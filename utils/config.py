@@ -1,6 +1,6 @@
 import os
 
-SMPL_DATA_PATH = "./body_models/smpl"
+SMPL_DATA_PATH = "./smpl_models/smpl"
 
 SMPL_KINTREE_PATH = os.path.join(SMPL_DATA_PATH, "kintree_table.pkl")
 SMPL_MODEL_PATH = os.path.join(SMPL_DATA_PATH, "SMPL_NEUTRAL.pkl")

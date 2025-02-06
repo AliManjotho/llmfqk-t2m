@@ -1,3 +1,9 @@
+*.pt
+dataset/HumanAct12Poses
+dataset/HumanML3D
+dataset/KIT-ML
+dataset/uestc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
