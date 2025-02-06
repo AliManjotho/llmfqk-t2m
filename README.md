@@ -85,6 +85,9 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000/cmdm_humanml3d_000294000.pt --input_text ./assets/sample_prompts.txt
 ```
 
+[![](https://github.com/AliManjotho/llmfqk-t2m/blob/main/assets/thumb_1.jpg)](https://github.com/AliManjotho/llmfqk-t2m/blob/main/assets/video_1.mp4)
+
+
 
 **You may also define:**
 * `--device` id.
@@ -105,7 +108,7 @@ It will look something like this:
 ### Rendering SMPL meshes  in Blender
 
 * Download and install blender https://www.blender.org/download/.
-* {VER} = your blender version, replace it accordingly.
+* `{VER}` = your blender version, replace it accordingly.
 * Blender>Preferences>Interface> Check Developer Options
 * Add the following paths to PATH environment variable.
 ```shell

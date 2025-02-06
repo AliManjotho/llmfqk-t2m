@@ -142,7 +142,7 @@ def plot_3d_motion(save_path, kinematic_tree, joints, title, dataset, figsize=(3
     ani = FuncAnimation(fig, update, frames=frame_number, interval=1000 / fps, repeat=False)
 
     # writer = FFMpegFileWriter(fps=fps)
-    ani.save(save_path, fps=fps, dpi=180)
+    ani.save(save_path, fps=fps)
     # ani = FuncAnimation(fig, update, frames=frame_number, interval=1000 / fps, repeat=False, init_func=init)
     # ani.save(save_path, writer='pillow', fps=1000 / fps)
 
