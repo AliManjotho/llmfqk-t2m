@@ -57,14 +57,8 @@ cp -r ../HumanML3D/HumanML3D llm-fqk-t2m/dataset/HumanML3D
 
 Download the pretrained models and place then unzip and place them in `./checkpoints/`. 
 
-**HumanML3D**
-
-[cmdm_humanml3d](https://drive.google.com/file/d/1JrVp4zO-gOYJAadhF1i_JemJje7Wzuw6/view?usp=sharing) - Runs 20X faster with comparable performance!
-
-
-**KIT**
-
-[cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing)
+**HumanML3D** ([cmdm_humanml3d](https://drive.google.com/file/d/1JrVp4zO-gOYJAadhF1i_JemJje7Wzuw6/view?usp=sharing))
+**KIT** ([cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing))
 
 
 
