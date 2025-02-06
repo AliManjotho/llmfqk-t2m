@@ -100,7 +100,7 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 It will look something like this:
 
 ![example](assets/video_1.gif)
-
+![example](assets/video_smpl.gif)
 
 
 ### Rendering SMPL meshes  in Blender
