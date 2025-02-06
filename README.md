@@ -85,9 +85,7 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000/cmdm_humanml3d_000294000.pt --input_text ./assets/sample_prompts.txt
 ```
 
-[![video](assets/thumb_1.png)](assets/video_1.mp4)
 
-<video src='assets/video_1.mp4' width=180/>
 
 **You may also define:**
 * `--device` id.
@@ -101,7 +99,7 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 
 It will look something like this:
 
-![example](assets/example_stick_fig.gif)
+![example](assets/video_1.gif)
 
 
 
