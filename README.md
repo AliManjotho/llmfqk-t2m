@@ -85,7 +85,7 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000/cmdm_humanml3d_000294000.pt --input_text ./assets/sample_prompts.txt
 ```
 
-[![](https://github.com/AliManjotho/llmfqk-t2m/blob/main/assets/thumb_1.jpg)](https://github.com/AliManjotho/llmfqk-t2m/blob/main/assets/video_1.mp4)
+[![](https://github.com/AliManjotho/llmfqk-t2m/raw/refs/heads/main/assets/thumb_1.jpg)](https://github.com/AliManjotho/llmfqk-t2m/raw/refs/heads/main/assets/video_1.mp4)
 
 
 
