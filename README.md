@@ -13,14 +13,14 @@ Please visit our [**webpage**](https://alimanjotho.github.io/llm-fqk-t2m/) for m
 
 This code was tested on `Windows11 24H2` and requires:
 
-* Python 3.7
+* Python 3.7.13
+* PyTorch 1.7.1
 * conda3 or miniconda3
-* CUDA capable GPU (one is enough)
 
 ### 1. Setup FFMPEG
-Download ffmpeg from https://www.ffmpeg.org/download.html#build-windows
-Extract it in `C:\ffmpeg`.
-Add `C:\ffmpeg\bin` in `PATH` environment variable.
+* Download ffmpeg from https://www.ffmpeg.org/download.html#build-windows
+* Extract it in `C:\ffmpeg`.
+* Add `C:\ffmpeg\bin` in `PATH` environment variable.
 
 
 ### 2. Setup miniconda environment
@@ -31,7 +31,7 @@ python -m spacy download en_core_web_sm
 pip install git+https://github.com/openai/CLIP.git
 ```
 
-Download dependencies:
+* Download dependencies:
 
 ```bash
 bash protos/smpl_files.sh
@@ -43,22 +43,24 @@ bash protos/t2m_evaluators.sh
 
 ### 3. Get datasets
 
-**HumanML3D** - Follow the instructions in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the resultant dataset to this repository:
+**HumanML3D**
+* Follow the instructions in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the resultant dataset to this repository:
 
 ```shell
 cp -r ../HumanML3D/HumanML3D llm-fqk-t2m/dataset/HumanML3D
 ```
 
-**KIT** - Download from [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git) and the place result in `./dataset/KIT-ML`
+**KIT**
+* Download from [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git) and the place result in `./dataset/KIT-ML`
 
 
 
 ### 4. Get the pretrained models
 
-Download the pretrained models and place then unzip and place them in `./checkpoints/`. 
+* Download the pretrained models and place then unzip and place them in `./checkpoints/`. 
 
-**HumanML3D** ([cmdm_humanml3d](https://drive.google.com/file/d/1JrVp4zO-gOYJAadhF1i_JemJje7Wzuw6/view?usp=sharing))
-**KIT** ([cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing))
+* **HumanML3D** ([cmdm_humanml3d](https://drive.google.com/file/d/1JrVp4zO-gOYJAadhF1i_JemJje7Wzuw6/view?usp=sharing))
+* **KIT** ([cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing))
 
 
 
@@ -102,15 +104,15 @@ It will look something like this:
 
 ### Rendering SMPL meshes  in Blender
 
-Download and install blender https://www.blender.org/download/.
-{VER} = your blender version, replace it accordingly.
-Blender>Preferences>Interface> Check Developer Options
-Add the following paths to PATH environment variable.
+* Download and install blender https://www.blender.org/download/.
+* {VER} = your blender version, replace it accordingly.
+* Blender>Preferences>Interface> Check Developer Options
+* Add the following paths to PATH environment variable.
 ```shell
 C:\Program Files\Blender Foundation\Blender {VER}
 C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin
 ```
-Run CMD as Administrator and follow these commands:
+* Run CMD as Administrator and follow these commands:
 ```shell
 "C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m ensurepip --upgrade
 "C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install matplotlib --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
@@ -121,10 +123,10 @@ Run CMD as Administrator and follow these commands:
 "C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install moviepy==1.0.3 --upgrade  --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
 ```
 
-Download Blender Animation Files:
+* Download Blender Animation Files:
 https://drive.google.com/file/d/1EbUkwPCt7eB9HAZXtM-nCxsztkfsRImD/view?usp=sharing
 
-To create SMPL mesh per frame run:
+* To create SMPL mesh per frame run:
 
 ```shell
 python -m visualize.render_mesh --input_path /path/to/mp4/stick/figure/file
