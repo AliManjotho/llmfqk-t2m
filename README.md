@@ -42,44 +42,20 @@ bash protos/t2m_evaluators.sh
 
 
 ### 3. Get datasets
-There are two paths to get the data:
 
-(a) **Go the easy way if** you just want to generate text-to-motion (excluding editing which does require motion capture data)
-
-(b) **Get full data** to train and evaluate the model.
-
-
-#### a. The easy way (text only)
-
-**HumanML3D** - Clone HumanML3D, then copy the data dir to our repository:
+**HumanML3D** - Follow the instructions in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the resultant dataset to this repository:
 
 ```shell
-cd ..
-git clone https://github.com/EricGuo5513/HumanML3D.git
-unzip ./HumanML3D/HumanML3D/texts.zip -d ./HumanML3D/HumanML3D/
-cp -r HumanML3D/HumanML3D llm-fqk-t2m/dataset/HumanML3D
-cd llm-fqk-t2m
+cp -r ../HumanML3D/HumanML3D llm-fqk-t2m/dataset/HumanML3D
 ```
 
-
-#### b. Full data (text + motion capture)
-
-**HumanML3D** - Follow the instructions in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git),
-then copy the result dataset to our repository:
-
-```shell
-cp -r ../HumanML3D/HumanML3D ./dataset/HumanML3D
-```
-
-**KIT** - Download from [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git) (no processing needed this time) and the place result in `./dataset/KIT-ML`
-
+**KIT** - Download from [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git) and the place result in `./dataset/KIT-ML`
 
 
 
 ### 4. Get the pretrained models
 
 Download the pretrained models and place then unzip and place them in `./checkpoints/`. 
-
 
 **HumanML3D**
 
@@ -89,7 +65,6 @@ Download the pretrained models and place then unzip and place them in `./checkpo
 **KIT**
 
 [cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing)
-
 
 
 
@@ -115,10 +90,6 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 ```
 
 
-
-
-
-
 **You may also define:**
 * `--device` id.
 * `--seed` to sample different prompts.
@@ -133,9 +104,31 @@ It will look something like this:
 
 ![example](assets/example_stick_fig.gif)
 
-You can stop here, or render the SMPL mesh using the following script.
 
-### Render SMPL mesh
+
+### Rendering SMPL meshes  in Blender
+
+Download and install blender https://www.blender.org/download/.
+{VER} = your blender version, replace it accordingly.
+Blender>Preferences>Interface> Check Developer Options
+Add the following paths to PATH environment variable.
+```shell
+C:\Program Files\Blender Foundation\Blender {VER}
+C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin
+```
+Run CMD as Administrator and follow these commands:
+```shell
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m ensurepip --upgrade
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install matplotlib --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install hydra-core --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install hydra_colorlog --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install shortuuid --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install omegaconf --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+"C:\Program Files\Blender Foundation\Blender {VER}\{VER}\python\bin\python.exe" -m pip install moviepy==1.0.3 --upgrade  --target="C:\Program Files\Blender Foundation\Blender {VER}\{VER}\scripts\modules"
+```
+
+Download Blender Animation Files:
+https://drive.google.com/file/d/1EbUkwPCt7eB9HAZXtM-nCxsztkfsRImD/view?usp=sharing
 
 To create SMPL mesh per frame run:
 
@@ -147,16 +140,9 @@ python -m visualize.render_mesh --input_path /path/to/mp4/stick/figure/file
 * `prompt##_rep##_smpl_params.npy` - SMPL parameters (thetas, root translations, vertices and faces)
 * `prompt##_rep##_obj` - Mesh per frame in `.obj` format.
 
-**Notes:**
-* The `.obj` can be integrated into Blender/Maya/3DS-MAX and rendered using them.
-* This script is running [SMPLify](https://smplify.is.tue.mpg.de/) and needs GPU as well (can be specified with the `--device` flag).
-* **Important** - Do not change the original `.mp4` path before running the script.
 
-**Notes for 3d makers:**
-* You have two ways to animate the sequence:
-  1. Use the [SMPL add-on](https://smpl.is.tue.mpg.de/index.html) and the theta parameters saved to `sample##_rep##_smpl_params.npy` (we always use beta=0 and the gender-neutral model).
-  1. A more straightforward way is using the mesh data itself. All meshes have the same topology (SMPL), so you just need to keyframe vertex locations. 
-     Since the OBJs are not preserving vertices order, we also save this data to the `sample##_rep##_smpl_params.npy` file for your convenience.
+
+
 
 
 ## Train CMDM
@@ -180,8 +166,7 @@ python -m train.train_cmdm --save_dir checkpoints/cmdm_kitml_1 --dataset kit
 
 ## Evaluation
 
-* Takes about 20 hours (on a single GPU)
-* The output of this script for the pre-trained models (as was reported in the paper) is provided in the checkpoints zip file.
+* Single GPU
 
 **HumanML3D**
 ```shell
@@ -194,10 +179,6 @@ python -m evaluations.eval_humanml --model_path ./checkpoints/cmdm_kitml_0002940
 ```
 
 
-
-Download Blender Animation Files:
-
-https://drive.google.com/file/d/1EbUkwPCt7eB9HAZXtM-nCxsztkfsRImD/view?usp=sharing
 
 
 ## Bibtex
