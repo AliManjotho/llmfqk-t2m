@@ -87,7 +87,7 @@ python -m sample_cmdm.sample --model_path ./checkpoints/cmdm_humanml3d_000294000
 
 [![video](assets/thumb_1.png)](assets/video_1.mp4)
 
-
+<video src='assets/video_1.mp4' width=180/>
 
 **You may also define:**
 * `--device` id.
