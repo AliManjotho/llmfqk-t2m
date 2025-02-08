@@ -62,8 +62,12 @@ cp -r ../HumanML3D/HumanML3D llm-fqk-t2m/dataset/HumanML3D
 * **HumanML3D** ([cmdm_humanml3d](https://drive.google.com/file/d/1JrVp4zO-gOYJAadhF1i_JemJje7Wzuw6/view?usp=sharing))
 * **KIT** ([cmdm_kitml](https://drive.google.com/file/d/1SHCRcE0es31vkJMLGf9dyLe7YsWj7pNL/view?usp=sharing))
 
-
-
+### 5. Setup LLaMA3.1
+* Download the install Ollama: https://ollama.com/download
+* Run following command in command prompt:
+```shell
+ollama run llama3.1:8b
+```
 
 ## Motion Generation
 

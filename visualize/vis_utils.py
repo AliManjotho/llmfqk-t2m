@@ -24,7 +24,7 @@ class npy2obj:
         self.j2s = joints2smpl(num_frames=self.num_frames, device_id=device, cuda=cuda)
 
         if self.nfeats == 3:
-            print(f'Running SMPLify For sample [{sample_idx}], repetition [{rep_idx}], it may take a few minutes.')
+            print(f'Running SMPLify For prompt [{sample_idx}], repetition [{rep_idx}], it may take a few minutes.')
             motion_tensor, opt_dict = self.j2s.joint2smpl(self.motions['motion'][self.absl_idx].transpose(2, 0, 1))  # [nframes, njoints, 3]
             self.motions['motion'] = motion_tensor.cpu().numpy()
         elif self.nfeats == 6:

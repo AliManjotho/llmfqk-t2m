@@ -33,7 +33,7 @@ amass_idx =       range(22)
 amass_smpl_idx =  range(22)
 
 
-SMPL_MODEL_DIR = "./body_models/"
+SMPL_MODEL_DIR = "./smpl_models/"
 GMM_MODEL_DIR = "./visualize/joints2smpl/smpl_models/"
 SMPL_MEAN_FILE = "./visualize/joints2smpl/smpl_models/neutral_smpl_mean_params.h5"
 # for collsion 
