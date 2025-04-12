@@ -184,12 +184,16 @@ python -m evaluations.eval_humanml --model_path ./checkpoints/cmdm_kitml_0002940
 
 ## Bibtex
 ```
-@article{
-manjotho2025llmfqkt2m,
-title={LLM-Guided Fuzzy Kinematic Modeling for Resolving Kinematic Uncertainties and Linguistic Ambiguities in Text-to-Motion Generation},
-author={Ali Asghar Manjotho and Tekie Tsegay Tewolde and Ramadhani Ally Duma and Zhendong Niu},
-journal={Expert Systems With Applications},
-year={2025}
+@article{manjotho2025llmfqkt2m,
+author = {Ali Asghar Manjotho and Tekie Tsegay Tewolde and Ramadhani Ally Duma and Zhendong Niu},
+title = {LLM-guided fuzzy kinematic modeling for resolving kinematic uncertainties and linguistic ambiguities in text-to-motion generation},
+journal = {Expert Systems with Applications},
+volume = {279},
+pages = {127283},
+year = {2025},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2025.127283},
+url = {https://www.sciencedirect.com/science/article/pii/S0957417425009054}
 }
 ```
 
