@@ -1,7 +1,7 @@
 # LLM-FQK-T2M: LLM-Guided Fuzzy Kinematic Modeling for Resolving Kinematic Uncertainties and Linguistic Ambiguities in Text-to-Motion Generation
 
 
-The official PyTorch implementation of the paper [**"LLM-Guided Fuzzy Kinematic Modeling for Resolving Kinematic Uncertainties and Linguistic Ambiguities in Text-to-Motion Generation"**](https://alimanjotho.github.io/llm-fqk-t2m/).
+The official PyTorch implementation of the paper [**"LLM-Guided Fuzzy Kinematic Modeling for Resolving Kinematic Uncertainties and Linguistic Ambiguities in Text-to-Motion Generation"**](https://www.sciencedirect.com/science/article/abs/pii/S0957417425009054).
 
 Please visit our [**webpage**](https://alimanjotho.github.io/llm-fqk-t2m/) for more details.
 
