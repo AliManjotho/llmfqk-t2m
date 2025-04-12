@@ -180,7 +180,7 @@ python -m evaluations.eval_humanml --model_path ./checkpoints/cmdm_kitml_0002940
 ```
 
 
-
+### **[Read Paper](https://www.sciencedirect.com/science/article/abs/pii/S0957417425009054)**
 
 ## Bibtex
 ```
