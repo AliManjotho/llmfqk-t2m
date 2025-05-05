@@ -193,15 +193,13 @@ pages = {127283},
 year = {2025},
 issn = {0957-4174},
 doi = {https://doi.org/10.1016/j.eswa.2025.127283},
-url = {https://www.sciencedirect.com/science/article/pii/S0957417425009054}
+url = {https://www.sciencedirect.com/science/article/pii/S0957417425009054},
 }
 ```
 
 
 ## Acknowledgments
-
-This code is standing on the shoulders of giants. We want to thank the following contributors
-that our code is based on:
+This code is based on the [MDM](https://github.com/GuyTevet/motion-diffusion-model) implementation. We also thank the following contributors for the progressive development of the domain:
 
 [guided-diffusion](https://github.com/openai/guided-diffusion), [MotionCLIP](https://github.com/GuyTevet/MotionCLIP), [text-to-motion](https://github.com/EricGuo5513/text-to-motion), [actor](https://github.com/Mathux/ACTOR), [joints2smpl](https://github.com/wangsen1312/joints2smpl), [MoDi](https://github.com/sigal-raab/MoDi).
 
